@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-backend
+  namespace: flask-backend
+  labels:
+    app: flask-backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      # name: flask-backend
+      labels:
+        app: flask-backend
+    spec:
+      serviceAccountName: flask-backend-sa  # Todo: cdkでSAを作成する
+      containers:
+        - name: flask-backend
+          image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: AWS_DEFAULT_REGION
+              value: ap-northeast-1
+            - name: DYNAMODB_TABLE_NAME  # Todo: cdkでDynamoDBを作成する
+              value: message
+      # restartPolicy: Always
+  selector:
+    matchLabels:
+      app: flask-backend
