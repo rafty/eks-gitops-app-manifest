@@ -10,7 +10,7 @@ spec:
       labels:
         app: flask-backend
     spec:
-      serviceAccountName: flask-backend  # Todo: cdkでSAを作成する
+      serviceAccountName: flask-backend  # cdkでSAを作成する
       containers:
         - name: flask-backend
           image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/backend:latest
