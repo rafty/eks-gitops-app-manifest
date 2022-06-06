@@ -3,10 +3,9 @@ kind: Deployment
 metadata:
   name: flask-frontend
   namespace: flask-frontend
+  labels:
+    app: flask-frontend
 spec:
-  selector:
-    matchLabels:
-      app: flask-frontend
   replicas: 1
   template:
     metadata:
@@ -23,4 +22,6 @@ spec:
           env:
             - name: BACKEND_URL
               value: http://flask-backend.flask-backend:5000/messages
-
+  selector:
+    matchLabels:
+      app: flask-frontend
