@@ -2,14 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-frontend
-#  namespace: flask-frontend
-#  labels:
-#    app: flask-frontend
+  namespace: flask-frontend  # 追加
 spec:
   replicas: 1
   template:
     metadata:
-#      name: flask-frontend
       labels:
         app: flask-frontend
     spec:
