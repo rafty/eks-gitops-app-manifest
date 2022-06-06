@@ -9,7 +9,7 @@ spec:
   replicas: 1
   template:
     metadata:
-      name: flask-backend
+#      name: flask-backend
       labels:
         app: flask-backend
     spec:

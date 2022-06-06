@@ -7,19 +7,20 @@ spec:
   selector:
     matchLabels:
       app: flask-frontend
-    replicas: 1
-    template:
-      metadata:
-        name: flask-frontend
-        labels:
-          app: flask-frontend
-      spec:
-        containers:
-          - name: flask-frontend
-            image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/frontend:latest
-            imagePullPolicy: Always
-            ports:
-              - containerPort: 5000
-            env:
-              - name: BACKEND_URL
-                value: http://flask-backend.flask-backend:5000/messages
+  replicas: 1
+  template:
+    metadata:
+#      name: flask-frontend
+      labels:
+        app: flask-frontend
+    spec:
+      containers:
+        - name: flask-frontend
+          image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: BACKEND_URL
+              value: http://flask-backend.flask-backend:5000/messages
+
