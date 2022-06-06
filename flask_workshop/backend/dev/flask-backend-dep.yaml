@@ -4,7 +4,7 @@ metadata:
   name: flask-backend
   namespace: flask-backend  # 追加
 spec:
-  replicas: 2  # 1 -> 2
+  replicas: 1  # 1 -> 2
   template:
     metadata:
       labels:
