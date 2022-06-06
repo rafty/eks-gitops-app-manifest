@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-backend
-  namespace: flask-backend
-  labels:
-    app: flask-backend
+#  namespace: flask-backend
+#  labels:
+#    app: flask-backend
 spec:
   replicas: 1
   template:
     metadata:
-      name: flask-backend
+#      name: flask-backend
       labels:
         app: flask-backend
     spec:
