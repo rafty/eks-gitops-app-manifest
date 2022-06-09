@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: flask-frontend
-        image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/frontend:yyyyyyyyy
+        image: 338456725408.dkr.ecr.ap-northeast-1.amazonaws.com/frontend:12345
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
